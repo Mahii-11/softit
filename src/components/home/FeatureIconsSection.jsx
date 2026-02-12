@@ -39,7 +39,7 @@ export default function WhyChooseUsSection() {
         {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Why Shop With Us?
+            Why Shop {""}<span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">With Us?</span>
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             We provide the best shopping experience with high-quality products,
@@ -84,8 +84,8 @@ export default function WhyChooseUsSection() {
 
         {/* CTA Button */}
         <div className="mt-16 text-center">
-          <button className="px-8 py-3 bg-black text-white rounded-full 
-          hover:bg-gray-800 transition duration-300 shadow-md">
+          <button className="px-8 py-3 bg-purple-600 text-slate-100 rounded-full 
+          hover:bg-purple-400 hover:text-slate-50 transition duration-300 shadow-md">
             Start Shopping
           </button>
         </div>

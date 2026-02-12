@@ -5,23 +5,23 @@ export default function PremiumProductsSection() {
     {
       title: "Featured Products",
       products: [
-        { name: "Motorola Edge 60 Pro 5G", price: "40000 Tk", image: "/images/appliances.png" },
-        { name: "OnePlus Buds 4 ANC TWS", price: "8450 Tk", image: "/images/audio.png" },
-        { name: "CMF Watch Pro 2 BT", price: "6500 Tk", image: "/images/electronics.png" },
+        { name: "Motorola Edge 60 Pro 5G", price: "40000 Tk", image: "/images/motorola.png" },
+        { name: "OnePlus Buds 4 ANC TWS", price: "8450 Tk", image: "/images/oneplus.png" },
+        { name: "CMF Watch Pro 2 BT", price: "6500 Tk", image: "/images/cmwatch.png" },
       ],
     },
     {
       title: "New Arrivals",
       products: [
-        { name: "CMF Watch Pro 2 BT", price: "6500 Tk", image: "/images/game.png" },
-        { name: "OnePlus Buds 4 ANC TWS", price: "8450 Tk", image: "/images/kitchen.png" },
-        { name: "Surface Laptop 5", price: "180000 Tk", image: "/images/oggice.png" },
+        { name: "CMF Watch Pro 2 BT", price: "6500 Tk", image: "/images/cmwatch.png" },
+        { name: "OnePlus Buds 4 ANC TWS", price: "8450 Tk", image: "/images/oneplus.png" },
+        { name: "Surface Laptop 5", price: "180000 Tk", image: "/images/laptop.png" },
       ],
     },
     {
       title: "Best Selling Product",
       products: [
-        { name: "Instant Pot Vortex Plus XL", price: "$59.99", image: "/images/smarthome.png" },
+        { name: "Instant Pot Vortex Plus XL", price: "$59.99", image: "/images/air.png" },
         { name: "iPad Mini 6 8.3 inch", price: "$59.99", image: "/images/ipad.png" },
         { name: "JBL Live 460nc", price: "$59.99", image: "/images/jbl.png" },
       ],

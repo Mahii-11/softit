@@ -39,7 +39,8 @@ export default function AutoSlidingCategories() {
 
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
-            Popular Categories
+            Popular {""}<span className="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent">Categories</span>
+
           </h2>
         </div>
 
