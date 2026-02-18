@@ -1,6 +1,7 @@
 import {  Search  } from "lucide-react";
 import { MapPin } from "lucide-react";
 import { Input } from "./ui/input";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -8,15 +9,18 @@ export default function Header() {
       <div className="container-custom flex h-16 items-center justify-between gap-4">
         
         {/* Logo */}
-        <div className="flex items-center gap-2 cursor-pointer">
+        <Link to="/">
+         <div className="flex items-center gap-2 cursor-pointer">
          <div className="flex items-center cursor-pointer">
            <img
             src="/images/logo-softit.png"
-            alt="GadgetGlobe"
+            alt="company logo"
             className="h-8 md:h-9 w-auto object-contain"
              />
            </div>
         </div>
+        
+        </Link>
         {/* Search */}
         <div className="flex-1 max-w-md hidden md:block">
           <div className="relative">

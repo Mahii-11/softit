@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function MostViewedProducts() {
   const sliderRef = useRef(null);
@@ -92,7 +93,8 @@ export default function MostViewedProducts() {
                   group-hover:opacity-100
                   transition-all duration-500
                 ">
-                  <button className="
+                  <Link to="/cart">
+                   <button className="
                     w-full py-2 rounded-full
                     bg-gradient-to-r from-purple-500 to-indigo-500
                     text-white font-medium
@@ -102,10 +104,9 @@ export default function MostViewedProducts() {
                   ">
                     Add to Cart
                   </button>
+                  </Link>
                 </div>
-
               </div>
-
             </div>
           ))}
         </div>
