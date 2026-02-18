@@ -13,9 +13,9 @@ export default function Header() {
          <div className="flex items-center gap-2 cursor-pointer">
          <div className="flex items-center cursor-pointer">
            <img
-            src="/images/logo-softit.png"
+            src="/images/kizenlogo.png"
             alt="company logo"
-            className="h-8 md:h-9 w-auto object-contain"
+            className="h-24 md:h-36 w-auto object-contain"
              />
            </div>
         </div>
