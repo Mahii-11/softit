@@ -1,95 +1,45 @@
-import { Button } from "../components/ui/button";
-import { ShoppingBag, Search, Menu, User } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "../components/ui/sheet";
-import { Input } from "./ui/input";
+const categories = [
+  "Flash Deals", "Electronics", "Fashion", "Home & Garden", "Sports", "Beauty", "Toys",
+  "Automotive", "Tools", "Jewelry", "Bags", "Watches", "Shoes", "Office", "Books",
+];
 
 export default function Navbar() {
-  const navItems = [
-    "Phones",
-    "Watches",
-    "Headphone & Speaker",
-    "Accessories",
-    "Gadget",
-  ];
+  const currentPath = window.location.pathname;
+
+  const currentCat = currentPath.startsWith("/category/")
+    ? decodeURIComponent(currentPath.replace("/category/", ""))
+    : "";
+
+  const handleNavigate = (cat) => {
+    window.location.href = `/category/${encodeURIComponent(cat)}`;
+  };
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b b  bg-[#9F28E3] backdrop-blur-md text-stone-100">
-      <div className="container-custom h-14 flex items-center gap-4">
+    <nav className="bg-white border-b border-gray-200 shadow-sm sticky top-[46px] z-40">
+      
+      <div className="max-w-screen-2xl mx-auto px-2">
+        
+        <div className="flex items-center overflow-x-auto gap-0 scrollbar-none">
 
-        {/* Mobile Menu */}
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
+          {categories.map((cat, i) => {
+            const isActive =
+              currentCat === cat || (i === 0 && currentPath === "/");
 
-          <SheetContent side="left" className="w-72">
-            <SheetHeader>
-              <SheetTitle className="text-left text-xl font-bold">
-                Menu
-              </SheetTitle>
-            </SheetHeader>
+            return (
+              <button
+                key={i}
+                onClick={() => handleNavigate(cat)}
+                className={`flex-shrink-0 px-2.5 py-1.5 text-xs font-medium whitespace-nowrap transition-colors border-b-2 hover:text-[#e62e04] hover:bg-red-50 ${
+                  isActive
+                    ? "text-[#e62e04] border-[#e62e04] font-semibold"
+                    : "text-gray-700 border-transparent"
+                }`}
+              >
+                {cat}
+              </button>
+            );
+          })}
 
-            <div className="mt-6 space-y-4">
-              {/* Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input placeholder="Search products..." className="pl-9" />
-              </div>
-
-              {/* Links */}
-              {navItems.map((item) => (
-                <p
-                  key={item}
-                  className="cursor-pointer text-muted-foreground hover:text-primary transition font-medium"
-                >
-                  {item}
-                </p>
-              ))}
-            </div>
-          </SheetContent>
-        </Sheet>
-
-        {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-6 text-sm font-medium  text-white">
-          {navItems.map((item) => (
-            <span
-              key={item}
-              className="hover:text-gray-900 cursor-pointer transition"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-
-        {/* Center Search */}
-        <div className="flex-1 max-w-xl relative mx-auto sm:hidden md:hidden lg:hidden">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Search products..." className="pl-9" />
-        </div>
-
-        {/* Actions */}
-        <div className="ml-auto flex items-center gap-2 sm:gap-3">
-          
-          {/* Cart */}
-          <Button variant="ghost" size="icon" className="relative">
-            <ShoppingBag className="h-5 w-5" />
-            <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-white text-[10px] flex items-center justify-center">
-              0
-            </span>
-          </Button>
-
-          {/* User */}
-          <Button variant="ghost" size="icon">
-            <User className="h-5 w-5" />
-          </Button>
         </div>
       </div>
     </nav>
