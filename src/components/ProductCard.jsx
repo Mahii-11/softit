@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+
 const ProductCard = ({ product }) => {
   const discountPct = Math.round(
     ((product.originalPrice - product.price) /
@@ -49,7 +51,8 @@ const ProductCard = ({ product }) => {
         </button>
 
         {/* Desktop Hover Cart Bar */}
-        <button
+        <Link to="/productpage">
+         <button
           onClick={(e) => e.stopPropagation()}
           className="hidden md:flex absolute bottom-0 left-0 right-0 bg-[#e62e04] text-white text-[10px] font-semibold py-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150 items-center justify-center gap-1"
         >
@@ -68,6 +71,7 @@ const ProductCard = ({ product }) => {
           </svg>
           Add to Cart
         </button>
+        </Link>
       </div>
 
       <div className="p-1.5">
