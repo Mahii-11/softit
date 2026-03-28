@@ -30,6 +30,8 @@ const ProductCard = ({ product }) => {
         )}
 
         {/* Mobile Cart Button */}
+
+         <Link to="/productpage">
         <button
           onClick={(e) => e.stopPropagation()}
           className="md:hidden absolute bottom-1 right-1 bg-[#e62e04] text-white rounded-full w-7 h-7 flex items-center justify-center shadow-md active:scale-90 transition-transform"
@@ -49,6 +51,7 @@ const ProductCard = ({ product }) => {
             />
           </svg>
         </button>
+         </Link>
 
         {/* Desktop Hover Cart Bar */}
         <Link to="/productpage">
