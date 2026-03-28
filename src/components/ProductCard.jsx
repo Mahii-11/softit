@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router";
 
 const ProductCard = ({ product }) => {
   const discountPct = Math.round(
